@@ -3,198 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Панацея — Ficbook Mockup</title>
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#1a1a1a;color:#e0e0e0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:14px;line-height:1.5;width:100%;max-width:100%}
-.top-bar{background:#111;padding:6px 10px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #2a2a2a;position:sticky;top:0;z-index:100}
-.top-bar .addr-bar{background:#2a2a2a;border-radius:20px;flex:1;padding:5px 12px;font-size:12px;color:#aaa;display:flex;align-items:center;gap:6px}
-.top-bar .addr-bar .lock-icon{color:#4a90d9;font-size:11px}
-.top-bar .badge-num{background:#2a2a2a;border-radius:6px;padding:3px 7px;font-size:12px;color:#ccc}
-.top-bar .dots{color:#ccc;font-size:18px;letter-spacing:1px;line-height:1}
-.install-bar{background:#222;padding:8px 12px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #2a2a2a}
-.install-bar .app-icon{width:36px;height:36px;background:#c0392b;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.install-bar .app-icon svg{width:20px;height:20px;fill:none;stroke:#fff;stroke-width:2}
-.install-bar .app-text{flex:1;line-height:1.3}
-.install-bar .app-name{font-size:13px;color:#e0e0e0;font-weight:500}
-.install-bar .app-sub{font-size:11px;color:#888}
-.install-bar .install-btn{color:#4a90d9;font-size:13px;font-weight:500;white-space:nowrap}
-.install-bar .dismiss{color:#888;font-size:18px;padding:0 4px;cursor:pointer;flex-shrink:0}
-.main-nav{background:#1e1e1e;padding:8px 12px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #2a2a2a;position:sticky;top:37px;z-index:99}
-.nav-logo{color:#c0392b;font-size:22px}
-.write-btn{background:#4a90d9;color:#fff;border:none;border-radius:6px;padding:6px 14px;font-size:13px;font-weight:500;display:flex;align-items:center;gap:5px;cursor:pointer}
-.write-btn svg{width:14px;height:14px;fill:none;stroke:#fff;stroke-width:2}
-.nav-spacer{flex:1}
-.notif-badge{position:relative;display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;color:#ccc}
-.notif-badge .badge-dot{position:absolute;top:0;right:0;background:#4a90d9;color:#fff;font-size:9px;border-radius:8px;padding:1px 4px;min-width:16px;text-align:center;line-height:1.4}
-.user-avatar{width:30px;height:30px;border-radius:50%;background:#555;display:flex;align-items:center;justify-content:center;color:#ccc;font-size:12px}
-.sub-tabs{background:#1e1e1e;display:flex;border-bottom:1px solid #2a2a2a;position:sticky;top:84px;z-index:98}
-.sub-tab{flex:1;padding:10px 4px;text-align:center;font-size:12px;color:#888;border-bottom:2px solid transparent;cursor:pointer}
-.sub-tab.active{color:#e0e0e0;border-bottom-color:#4a90d9}
-.sub-tab-icon{width:40px;display:flex;align-items:center;justify-content:center;border-left:1px solid #2a2a2a;cursor:pointer}
-.sub-tab-icon svg{width:18px;height:18px;fill:none;stroke:#aaa;stroke-width:1.8}
-.fic-page{background:#1a1a1a;padding:16px 14px}
-.fic-title{font-size:24px;font-weight:700;color:#fff;margin-bottom:12px}
-.fic-badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;align-items:center}
-.badge{border-radius:4px;padding:3px 9px;font-size:12px;font-weight:500}
-.badge-oo{background:transparent;border:1.5px solid #4a90d9;color:#4a90d9;border-radius:4px;padding:2px 8px;font-size:12px}
-.badge-r{background:#c0392b;color:#fff}
-.badge-complete{background:transparent;border:1.5px solid #27ae60;color:#27ae60;padding:2px 8px;border-radius:4px}
-.stat-inline{display:flex;align-items:center;gap:4px;color:#aaa;font-size:13px}
-.stat-inline svg{width:15px;height:15px;fill:none;stroke:#aaa;stroke-width:1.8}
-.stat-inline.likes svg{stroke:#27ae60;fill:#27ae60}
-.stat-inline.awards svg{stroke:#f39c12}
-.divider-h{border:none;border-top:1px solid #2a2a2a;margin:14px 0}
-.author-row{display:flex;align-items:center;gap:10px;margin-bottom:14px}
-.author-avatar{width:44px;height:44px;border-radius:50%;background:#333;display:flex;align-items:center;justify-content:center;color:#aaa;font-size:18px;flex-shrink:0}
-.author-name{font-size:14px;font-weight:500;color:#e0e0e0}
-.author-role{font-size:12px;color:#888}
-.meta-block{margin-bottom:12px}
-.meta-label{font-size:12px;color:#888;margin-bottom:4px}
-.meta-value{font-size:13px;color:#e0e0e0}
-.meta-value a{color:#4a90d9;text-decoration:none}
-.tags-wrap{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
-.tag{background:#2a2a2a;border-radius:4px;padding:3px 8px;font-size:12px;color:#ccc}
-.tag.r18{background:#5a1a1a;color:#e07070;border:1px solid #7a2a2a}
-.tag.pairing{background:#1a2a4a;color:#70a0e0;border:1px solid #2a3a6a}
-.desc-box{background:#222;border-radius:8px;padding:12px;margin:6px 0 0;font-size:13px;color:#ccc;line-height:1.6}
-.notes-section{margin:10px 0}
-.notes-link{color:#4a90d9;font-size:13px;text-decoration:none;display:block;margin-bottom:2px}
-.dedication-box{margin-top:4px;padding:10px 14px;border-left:3px solid #4a90d9;background:#1e2a38;border-radius:0 6px 6px 0;font-size:13px;color:#ccc;line-height:1.6}
-.pub-section{font-size:13px;color:#888;margin:12px 0}
-.pub-label{font-weight:500;color:#aaa;margin-bottom:2px;font-size:13px}
-.social-bar{display:flex;margin:14px 0;border:1px solid #2a2a2a;border-radius:8px;overflow:hidden}
-.social-btn{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 6px;gap:4px;border-right:1px solid #2a2a2a;font-size:11px;color:#aaa;cursor:pointer}
-.social-btn:last-child{border-right:none}
-.social-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8}
-.social-btn.link-icon{color:#4a90d9}
-.rewards-section{margin:14px 0}
-.reward-item{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #222}
-.reward-icon{font-size:18px;flex-shrink:0}
-.reward-text{flex:1;font-size:13px;color:#ccc}
-.reward-author{font-size:12px;color:#888;margin-top:2px}
-.see-all{color:#4a90d9;font-size:13px;margin:8px 0;display:block;text-decoration:none;cursor:pointer}
-.reward-btn{background:#2a2a2a;border:none;border-radius:8px;padding:12px;text-align:center;width:100%;color:#ccc;font-size:14px;margin:8px 0;display:flex;align-items:center;justify-content:center;gap:8px;cursor:pointer}
-.reward-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8}
-.stats-row{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0;margin:10px 0;border:1px solid #2a2a2a;border-radius:8px;overflow:hidden}
-.stat-cell{padding:10px 6px;text-align:center;border-right:1px solid #2a2a2a}
-.stat-cell:last-child{border-right:none}
-.stat-num{font-size:16px;font-weight:700;display:block;margin-bottom:2px;color:#e0e0e0}
-.stat-num.green{color:#27ae60}
-.stat-num.star{color:#f39c12}
-.stat-label{font-size:11px;color:#888}
-.collections-row{text-align:center;padding:8px;font-size:13px;color:#888;margin-bottom:8px}
-.collections-num{color:#e0e0e0;font-weight:500}
-.start-reading-btn{background:#4a90d9;color:#fff;border:none;border-radius:8px;padding:14px;width:100%;font-size:15px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:8px;margin:10px 0;cursor:pointer}
-.start-reading-btn svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2}
-.toc-header{font-size:18px;font-weight:600;color:#fff;margin:16px 0 10px}
-.open-reader-btn{background:#222;border:1px solid #333;border-radius:8px;padding:12px;width:100%;color:#ccc;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:14px;cursor:pointer}
-.open-reader-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8}
-.promo-section{margin:14px 0}
-.promo-label-row{display:flex;align-items:center;gap:8px;margin-bottom:10px}
-.promo-title{font-size:14px;font-weight:500;color:#ccc}
-.promo-controls{display:flex;gap:6px;margin-left:auto}
-.promo-ctrl{background:#2a2a2a;border:none;border-radius:6px;color:#aaa;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:14px;cursor:pointer}
-.promo-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
-.promo-card{background:#252525;border-radius:8px;overflow:hidden}
-.promo-card-img{width:100%;height:120px;display:flex;align-items:center;justify-content:center;position:relative}
-.promo-card-img svg{opacity:0.3}
-.fandom-tag{position:absolute;bottom:6px;left:6px;background:rgba(0,0,0,.75);border-radius:4px;padding:2px 6px;font-size:10px;color:#aaa;display:flex;align-items:center;gap:4px}
-.fandom-dot{width:10px;height:10px;background:#4a90d9;border-radius:3px;flex-shrink:0}
-.promo-card-title{padding:6px 8px;font-size:12px;color:#ccc;line-height:1.3}
-.promo-card-sub{color:#666;font-size:11px}
-.toc-list{margin:10px 0}
-.toc-item{display:flex;align-items:center;padding:12px 0;border-bottom:1px solid #222;gap:10px;cursor:pointer}
-.toc-item-text{flex:1}
-.toc-item-title{font-size:14px;color:#e0e0e0;font-weight:500;margin-bottom:2px}
-.toc-item-sub{font-size:12px;color:#888}
-.toc-arrow{color:#555;font-size:18px}
-.reading-section{padding:14px;background:#1a1a1a;border-top:2px solid #2a2a2a;margin-top:10px}
-.reading-header{font-size:18px;font-weight:600;color:#fff;margin-bottom:4px}
-.reading-meta{font-size:12px;color:#666;margin-bottom:14px}
-.reading-body{font-size:15px;color:#d0d0d0;line-height:1.8}
-.reading-body p{margin-bottom:1.2em}
-.fixed-actions{position:fixed;bottom:24px;right:16px;display:flex;flex-direction:column;align-items:flex-end;gap:8px;z-index:200}
-.fixed-btn{width:42px;height:42px;border-radius:50%;border:none;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.6);cursor:pointer}
-.bookmark-btn{background:#4a90d9}
-.scroll-top-btn{background:#333}
-</style>
+<title>13–573890 (defuse the error) — Ficbook Mockup</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- Top Browser Bar -->
-<div class="top-bar">
-  <div class="addr-bar">
-    <span class="lock-icon">🔒</span>
+<!-- Browser -->
+<div class="browser-bar">
+  <div class="browser-pill">
     <span>ficbook.net/readfic/1074922</span>
+    <div class="browser-right">
+      <div class="tab-count">19</div>
+      <span>⋮</span>
+    </div>
   </div>
-  <div class="badge-num">19</div>
-  <div class="dots">⋮</div>
 </div>
 
-<!-- Install Banner -->
-<div class="install-bar">
-  <div class="dismiss">✕</div>
-  <div class="app-icon">
-    <svg viewBox="0 0 24 24"><path d="M3 18l6-6-6-6M13 6l6 6-6 6"/></svg>
+<!-- Install banner -->
+<div class="install-banner">
+  <div class="close">✕</div>
+  <div class="app-icon"></div>
+  <div class="banner-content">
+    <div class="banner-title">Книга Фанфиков</div>
+    <div class="banner-sub">Установить в Google Play</div>
   </div>
-  <div class="app-text">
-    <div class="app-name">Книга Фанфиков</div>
-    <div class="app-sub">Breakpoint SIA · Установить в Google Play</div>
-  </div>
-  <div class="install-btn">Установить</div>
+  <div class="install-link">Установить</div>
 </div>
 
-<!-- Main Navigation -->
-<div class="main-nav">
-  <div class="nav-logo">✒</div>
-  <button class="write-btn">
-    <svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-    Писать
-  </button>
-  <div class="nav-spacer"></div>
-  <div class="notif-badge">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.8"><path d="M15 17H9v1a3 3 0 006 0v-1z"/><path d="M12 3a6 6 0 016 6c0 3.5 1 5 2 6H4c1-1 2-2.5 2-6a6 6 0 016-6z"/></svg>
-    <span class="badge-dot">47</span>
+<!-- Top navigation -->
+<div class="top-nav">
+  <div class="logo"></div>
+  <div class="write-btn">✎ Писать</div>
+  <div class="notif">
+    🔔
+    <span class="badge">47</span>
   </div>
-  <div class="notif-badge">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8l10 7 10-7"/></svg>
-    <span class="badge-dot">71</span>
+  <div class="notif">
+    💬
+    <span class="badge">71</span>
   </div>
-  <div class="user-avatar">👤</div>
+  <div class="avatar"></div>
 </div>
 
-<!-- Sub Tabs -->
-<div class="sub-tabs">
-  <div class="sub-tab">Рекомендации</div>
-  <div class="sub-tab active">Фанфики</div>
-  <div class="sub-tab">Авторы</div>
-  <div class="sub-tab">ТОП</div>
-  <div class="sub-tab-icon">
-    <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-  </div>
-  <div class="sub-tab-icon">
-    <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-  </div>
+<!-- Tabs -->
+<div class="tabs">
+  <div class="tab">Рекомендации</div>
+  <div class="tab">Фанфики</div>
+  <div class="tab">Авторы</div>
+  <div class="tab">ТОП</div>
+  <div class="search-btn">⌕</div>
+  <div class="menu-btn">☰</div>
 </div>
 
 <!-- Fic Info Page -->
 <div class="fic-page">
 
-  <div class="fic-title">Панацея</div>
+  <div class="fic-title">13–573890 (defuse the error)</div>
 
   <!-- Badges Row -->
   <div class="fic-badges">
-    <div class="badge badge-oo">∞∞</div>
-    <div class="badge badge-r">R</div>
+    <div class="badge badge-oo">Слэш</div>
+    <div class="badge badge-r">NC_17</div>
     <div class="badge badge-complete">Завершён</div>
     <div class="stat-inline likes">
       <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-      <span>19528</span>
+      <span>6230</span>
     </div>
     <div class="stat-inline awards">
       <svg viewBox="0 0 24 24" stroke="#f39c12" stroke-width="1.8" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
-      <span>73</span>
+      <span>93</span>
     </div>
   </div>
 
@@ -202,7 +79,7 @@ body{background:#1a1a1a;color:#e0e0e0;font-family:-apple-system,BlinkMacSystemFo
   <div class="author-row">
     <div class="author-avatar">👤</div>
     <div>
-      <div class="author-name">iriskasviski</div>
+      <div class="author-name">touch me yeah</div>
       <div class="author-role">автор</div>
     </div>
   </div>
@@ -220,36 +97,38 @@ body{background:#1a1a1a;color:#e0e0e0;font-family:-apple-system,BlinkMacSystemFo
     <div class="meta-label">Пэйринг и персонажи:</div>
     <div class="tags-wrap">
       <span class="tag pairing">Ли Минхо/Хан Джисон</span>
-      <span class="tag">Со Чанбин</span>
-      <span class="tag">Ким Сынмин</span>
-      <span class="tag">Ян Чонин</span>
-      <span class="tag">Хван Хёнджин</span>
-      <span class="tag">Ли Феликс</span>
-      <span class="tag">Бан Чан</span>
     </div>
   </div>
 
   <!-- Meta: Size -->
   <div class="meta-block">
     <div class="meta-label">Размер:</div>
-    <div class="meta-value">319 страниц, 136 892 слова, 22 части</div>
+    <div class="meta-value">454 страниц, 156 923 слова, 6 частей</div>
   </div>
 
   <!-- Meta: Tags -->
   <div class="meta-block">
     <div class="meta-label">Метки:</div>
     <div class="tags-wrap">
-      <span class="tag">AU</span>
-      <span class="tag">Hurt/Comfort</span>
-      <span class="tag">Ангст</span>
-      <span class="tag">Домашнее насилие</span>
-      <span class="tag r18">Насилие 18+</span>
+      <span class="tag">Армия</span>
+      <span class="tag">Курение</span>
+      <span class="tag">Военные</span>
+      <span class="tag">Шрамы</span>
+      <span class="tag">Неравные отношения+</span>
+      <span class="tag">Южная Корея</span>
+      <span class="tag">Серая мораль</span>
+      <span class="tag">Тренировки / Обучение</span>
+      <span class="tag">Тихий секс</span>
+      <span class="tag">Намеки на секс</span>
       <span class="tag">Нецензурная лексика</span>
-      <span class="tag r18">18+</span>
-      <span class="tag">ООС</span>
-      <span class="tag">Романтика</span>
-      <span class="tag">Семьи</span>
-      <span class="tag">Слоуберн</span>
+      <span class="tag">AU</span>
+      <span class="tag">Упоминания смертей</span>
+      <span class="tag">Упоминания насилия</span>
+      <span class="tag">Военные преступления</span>
+      <span class="tag">Прелюдия</span>
+      <span class="tag">Упоминания жестокости</span>
+      <span class="tag">Элементы ангста</span>
+      <span class="tag">Военно-учебные заведения</span>
     </div>
   </div>
 
@@ -258,24 +137,22 @@ body{background:#1a1a1a;color:#e0e0e0;font-family:-apple-system,BlinkMacSystemFo
   <!-- Description -->
   <div class="meta-block">
     <div class="meta-label">Описание:</div>
-    <div class="desc-box">
-      У Джисона грустный взгляд и тысяча проблем. У Минхо только одна проблема — Хан Джисон.
+    <div style="font-size:13px;color:#ccc;margin:4px 0 2px">Минхо отправляется на переподготовку для спецназа, чтобы попасть на службу в 707-ю группу специального назначения. Командование данной группы возглавляет Хан Джисон в звании подполковника. Все бы ничего, но Минхо отдают приказ уничтожить репутацию своего нового командира. И это не так просто, как может показаться на первый взгляд.
     </div>
   </div>
 
   <!-- Notes -->
   <div class="notes-section">
     <div class="meta-label">Примечания:</div>
-    <div style="font-size:13px;color:#ccc;margin:4px 0 2px">Визуализация:</div>
-    <a class="notes-link" href="#">https://pin.it/13K01mb</a>
-    <a class="notes-link" href="#">♡: https://t.me/iriswrites</a>
+    <div style="font-size:13px;color:#ccc;margin:4px 0 2px">все события вымышлены. любые совпадения случайны. кроме нас. maybe in the
+        next life.</div>
   </div>
 
   <!-- Dedication -->
   <div class="meta-block">
     <div class="meta-label">Посвящение:</div>
-    <div class="dedication-box">
-      Читателям, когда-либо имевшим проблемы в семье. Вы очень сильные. Вы со всем справитесь.
+    <div style="font-size:13px;color:#ccc;margin:4px 0 2px">
+        моему 13.
     </div>
   </div>
 
@@ -363,18 +240,18 @@ body{background:#1a1a1a;color:#e0e0e0;font-family:-apple-system,BlinkMacSystemFo
   </div>
 
   <!-- Start Reading CTA -->
-  <button class="start-reading-btn">
+  <a class="start-reading-btn" href="chapter-1.html">
     Начать читать
     <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-  </button>
+  </a>
 
   <!-- Table of Contents -->
   <div class="toc-header">Содержание</div>
 
-  <button class="open-reader-btn">
+  <a class="open-reader-btn" href="chapter-1.html">
     <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
     Открыть в читалке
-  </button>
+  </a>
 
   <!-- Promo Section -->
   <div class="promo-section">
@@ -410,94 +287,51 @@ body{background:#1a1a1a;color:#e0e0e0;font-family:-apple-system,BlinkMacSystemFo
 
   <!-- TOC List -->
   <div class="toc-list">
-    <div class="toc-item">
+    <a class="toc-item" href="chapter-1.html">
       <div class="toc-item-text">
-        <div class="toc-item-title">Part 1. «Просто Хан»</div>
-        <div class="toc-item-sub">14 мая 2021 г., 14:43 · Отзывы: 76</div>
+        <div class="toc-item-title">протяни руку – и это станет твоим.</div>
+        <div class="toc-item-sub">2 декабря 2024 г., 09:54 · Отзывы: 1132</div>
       </div>
       <div class="toc-arrow">›</div>
-    </div>
-    <div class="toc-item">
+    </a>
+    <a class="toc-item" href="chapter-2.html">
       <div class="toc-item-text">
-        <div class="toc-item-title">Part 2. «Горький кофе»</div>
-        <div class="toc-item-sub">18 мая 2021 г., 10:22 · Отзывы: 54</div>
+        <div class="toc-item-title">обещание / 13-573890.</div>
+        <div class="toc-item-sub">5 декабря 2024 г., 09:18 · Отзывы: 744</div>
       </div>
       <div class="toc-arrow">›</div>
-    </div>
-    <div class="toc-item">
+    </a>
+    <a class="toc-item" href="chapter-3.html">
       <div class="toc-item-text">
-        <div class="toc-item-title">Part 3. «Дождь»</div>
-        <div class="toc-item-sub">22 мая 2021 г., 15:10 · Отзывы: 48</div>
+        <div class="toc-item-title">maybe in the next life.</div>
+        <div class="toc-item-sub">10 декабря 2024 г., 08:52 · Отзывы: 846</div>
       </div>
       <div class="toc-arrow">›</div>
-    </div>
-    <div class="toc-item">
+    </a>
+    <a class="toc-item" href="chapter-4.html">
       <div class="toc-item-text">
-        <div class="toc-item-title">Part 4. «Холодный рассвет»</div>
-        <div class="toc-item-sub">26 мая 2021 г., 09:45 · Отзывы: 62</div>
+        <div class="toc-item-title">defuse the error.</div>
+        <div class="toc-item-sub">14 декабря 2024 г., 08:17 · Отзывы: 725</div>
       </div>
       <div class="toc-arrow">›</div>
-    </div>
-    <div class="toc-item">
+    </a>
+    <a class="toc-item" href="chapter-5.html">
       <div class="toc-item-text">
-        <div class="toc-item-title">Part 5. «Пустые слова»</div>
-        <div class="toc-item-sub">30 мая 2021 г., 13:00 · Отзывы: 41</div>
+        <div class="toc-item-title">and if you go, i wanna go with you.</div>
+        <div class="toc-item-sub">13 февраля 2025 г., 08:14 · Отзывы: 872</div>
       </div>
       <div class="toc-arrow">›</div>
-    </div>
-    <div class="toc-item">
+    </a>
+    <a class="toc-item" href="chapter-6.html">
       <div class="toc-item-text">
-        <div class="toc-item-title">Part 6. «Соседи»</div>
-        <div class="toc-item-sub">3 июня 2021 г., 11:15 · Отзывы: 38</div>
+        <div class="toc-item-title">and if you die, i wanna die with you.</div>
+        <div class="toc-item-sub">7 апреля 2025 г., 09:21 · Отзывы: 1892</div>
       </div>
       <div class="toc-arrow">›</div>
-    </div>
+    </a>
   </div>
 
 </div><!-- end .fic-page -->
-
-<!-- Reading Body -->
-<div class="reading-section">
-  <div class="reading-header">Part 1. «Просто Хан»</div>
-  <div class="reading-meta">14 мая 2021 г., 14:43</div>
-  <div class="reading-body">
-
-    <p>Он делает ещё один глоток, а остальную воду выливает в раковину, где стоит пара тарелок и кружка с недопитым ранее кофе. Взгляд его падает на вымытую белую кружечку с неровным рисунком рыжего кота. Она стоит на своём привычном месте, начищенная до блеска маленькими детскими ручками. Парень грустно усмехается. Подходит к окну.</p>
-
-    <p>Вид отсюда отвратный. Третий этаж, напротив дом из жёлто-коричневого кирпича, а внизу помойка, на которой, как ни глянь, собирается стая птиц. Слева, если высунуть голову, можно увидеть проезжую часть и угол небольшого магазинчика, в котором они обычно закупаются едой. Небо заволокли тучи. Звёзд сегодня не видно.</p>
-
-    <p>Джисон любит смотреть на звёзды. Особенно, когда выезжает загород. Даже ночью в городе сложно увидеть мерцающие в небе огоньки. Свет из чужих квартир или от витрин магазинов постоянно мешает. Со временем Хан даже начал верить, что звёзд и не существует вовсе, пока не выехал однажды в поход с классом три года назад.</p>
-
-    <p>Там, вдали от городских огней, небо оказалось совершенно другим. Миллионы крохотных точек рассыпались от горизонта до горизонта, и Джисон стоял, запрокинув голову, не в силах отвести взгляд. Кто-то из одноклассников смеялся над ним, кто-то тянул за рукав, предлагая вернуться к костру. Но он не мог.</p>
-
-    <p>Телефон на столе вибрирует. Джисон не смотрит на экран — знает, от кого. Тянется рукой, переворачивает его экраном вниз, и снова смотрит в окно. Птицы на помойке что-то не поделили, разлетелись с криком, и теперь серый асфальт выглядит ещё более пустым.</p>
-
-    <p>За стеной слышны голоса. Тихие, почти неразличимые. Мама и Чанбин, наверное, обсуждают что-то про школу. Или про ужин. Или про то, кто сегодня пойдёт в магазин. Джисон мысленно ставит на магазин — сам он точно не пойдёт, не в таком настроении.</p>
-
-    <p>Он отходит от окна, садится на край кровати. Комната маленькая, стол завален тетрадями и учебниками, которые он давно уже не открывал. На стене — постер группы, который он повесил два года назад в другой, более беззаботной жизни. Сейчас он смотрит на него без особых чувств.</p>
-
-    <p>Снова вибрирует телефон. На этот раз дольше — звонок. Джисон медленно встаёт, берёт телефон, видит имя на экране и долго смотрит на него, прежде чем нажать кнопку отбоя. Потом сидит тихо, ждёт, когда остановится сердце. Оно не останавливается. Просто продолжает биться, как ни в чём не бывало.</p>
-
-    <p>Наверное, это и есть жизнь — когда всё внутри кричит, а снаружи ты просто сидишь в маленькой комнате и смотришь на постер на стене. Когда тебе пятнадцать лет и весь мир кажется слишком тесным и слишком громким одновременно.</p>
-
-    <p>Джисон ложится поверх одеяла, смотрит в потолок. Там, в углу, есть маленькая трещина — он знает её наизусть, каждый изгиб, каждое ответвление. Иногда он придумывает, на что она похожа. Сегодня это птица с раскинутыми крыльями. Или, может, просто трещина.</p>
-
-    <p>За окном начинается дождь. Слышно, как первые капли барабанят по подоконнику. Джисон закрывает глаза. Завтра снова школа. Снова коридоры, снова взгляды, снова необходимость делать вид, что всё в порядке. Это несложно — он давно научился. Просто иногда, вот в такие моменты, в тишине своей комнаты, устаёт притворяться.</p>
-
-    <p>Дождь усиливается. Где-то далеко гремит гром. Джисон натягивает одеяло, прячет под него телефон, чтобы не видеть, как экран снова загорится. И ждёт, когда придёт сон.</p>
-
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-
-    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-
-    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.</p>
-
-    <p>Ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
-
-    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-
-  </div>
-</div>
 
 <!-- Fixed Floating Buttons -->
 <div class="fixed-actions">
